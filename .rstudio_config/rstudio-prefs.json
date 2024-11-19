@@ -62,7 +62,7 @@
     "real_time_spellchecking": false,
     "posix_terminal_shell": "custom",
     "custom_shell_command": "/usr/bin/bash",
-    "default_project_location": "~",
+    "default_project_location": "~/workspace",
     "source_with_echo": true,
     "show_hidden_files": true,
     "jobs_tab_visibility": "shown",
