@@ -1,0 +1,11 @@
+services:
+  rstudio:
+    build: .
+    ports:
+      - "8787:8787"
+    environment:
+      USER: rstudio
+      PASSWORD: rstudio
+    volumes:
+      - ./.rstudio_config:/home/rstudio/.config/rstudio
+      - ./workspace:/home/rstudio/workspace
