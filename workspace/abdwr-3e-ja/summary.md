@@ -207,14 +207,24 @@
 - A：とある選手が真っすぐを投げたときは73%、カーブを投げたときは85%だよ
 
 
+## Player Movement と Off-the-Bat Data
 
 
+### Statcast
 
 
+- 2015年から新しく導入されたよ
+- 打球角度とか打球速度もわかるよ
 
 
+### Baseball Savant data
 
 
+- 相手の守備シフトのデータもわかるよ
+- 打球の飛距離もわかるよ
 
+## Data Used in this Book
 
-
+- LarmanデータはLarmanパッケージで使えるよ
+- 小さいデータはabdwr3edataパッケージで使えるよ
+- RetrosheetとStatcastは大きすぎるから別途案内するよ
