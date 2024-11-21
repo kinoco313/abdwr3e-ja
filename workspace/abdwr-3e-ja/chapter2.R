@@ -55,10 +55,53 @@ NL_150 <- NLbatting |>
 
 NL_150 |> glimpse()  
 
+W <- c(8, 21, 15, 21, 21, 22, 14)
+L <- c(5, 10, 12, 14, 17, 14, 19)
+l
 
-  
-  
-  
-  
+win_pct <- 100 * W / (W + L)
+win_pct  
+
+Year <- seq(from = 1946, to = 1952)  
+Year
+
+Year <- 1946 : 1952
+Year
+
+Age <- Year - 1921
+plot(Age, win_pct)
+
+mean(win_pct)
+
+100 * sum(W) / (sum(W) + sum(L))
+
+sort(W)
+
+cumsum(W)
+
+summary(win_pct)
+
+W[c(1, 2, 5)]
+
+W[1:4]
+
+W[-c(1, 6)]
+
+win_pct > 60
+
+(W > 20) & (win_pct > 60)
+
+win_pct == max(win_pct)
+
+Year[win_pct == max(win_pct)]
+
+Year[W + L > 30]
+
+
+
+
+
+
+
 
 
