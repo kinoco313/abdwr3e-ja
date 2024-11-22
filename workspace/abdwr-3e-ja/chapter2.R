@@ -1,5 +1,4 @@
-# 初回のみ
-# remotes::install_github("beanumber/abdwr3edata")
+remotes::install_github("beanumber/abdwr3edata")
 
 library(abdwr3edata)
 library(tidyverse)
@@ -97,7 +96,61 @@ Year[win_pct == max(win_pct)]
 
 Year[W + L > 30]
 
+# 6節
+Year <- 2008 : 2017
+NL <- c("PHI", "PHI", "SFN", "SLN", "SFN",
+        "SLN", "SFN", "NYN", "CHN", "LAN")
+AL <- c("TBA", "NYA", "TEX", "TEX", "DET",
+        "BOS", "KCA", "KCA", "CLE", "HOU")
+Winner <- c("NL", "AL", "NL", "NL", "NL",
+            "AL", "NL", "AL", "NL", "AL")
+N_Games <- c(5, 6, 5, 7, 4, 7, 7, 5, 7, 7)
 
+
+WS_results <- tibble(
+  Year = Year, NL_Team = NL, AL_Team = AL,
+  N_Games = N_Games, Winner = Winner
+)
+WS_results
+
+grep("NY", c(AL, NL), value = TRUE)
+
+WS <- WS_results |> 
+  group_by(Winner) |> 
+  summarise(N = n())
+WS
+
+ggplot(WS, aes(x = Winner, y = N)) +
+  geom_col()
+
+WS_results |> 
+  group_by(NL_Team) |> 
+  summarise(N = n())
+
+WS_results <- WS_results |> 
+  mutate(
+    NL_Team = factor(
+      NL_Team,
+      levels = c("NYN", "PHI", "CHN", "SLN", "LAN", "SFN")
+    )
+  )
+str(WS_results$NL_Team)
+
+WS_results |> 
+  group_by(NL_Team) |> 
+  summarise(N = n())
+
+world_series <- list(
+  Winner = Winner,
+  Number_Games = N_Games,
+  Seasons  ="2008 to 2017"
+)
+world_series$Number_Games
+world_series[[2]]
+pluck(world_series, "Number_Games")
+world_series["Number_Games"]
+WS_results$NL_Team
+pull(WS_results, NL_Team)
 
 
 
